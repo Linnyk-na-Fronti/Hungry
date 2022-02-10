@@ -1,0 +1,66 @@
+.intro {
+	background-color: $backgrond-color;
+	color:#ffffff;
+	min-height: calc(100vh - 106px);
+		@media (max-width:992px){
+			min-height: calc(100vh - 190px);
+		}
+	@include media-breakpoint-up(xs){
+		&__content {
+			@extend .my-row;
+			position: relative;
+		}
+
+		&__information {
+			margin: 50px 0 0 0;
+			@include make-col(12);
+			text-align: center;
+		}
+
+		&__title {
+			font-family: WorkSans;
+			font-size: 2rem;
+			font-weight: 700;
+			line-height: 1.3em;
+		}
+
+		&__text {
+			font-size: 1.25rem;
+			line-height: 1.5em;
+			margin: 30px 0 50px;
+		}
+
+		&__link-img{
+			margin: 0 0 35px 0;
+		}
+
+		&__img-block {
+			display: none;
+			margin: 80px 0 80px 0;
+		}
+		&__img{
+			max-width: 100%;
+			padding: 0 100px 100px 70px;
+			position: relative;
+			background: url(../img/intro/Ellipse-4.png) no-repeat top 0px right 0px, url(../img/intro/Ellipse-5.png) no-repeat bottom 0px left 0px;
+		}
+	}
+	@include media-breakpoint-up(lg){
+		
+		&__information {
+			margin: 200px 0 0 0;
+			text-align: left;
+			@include make-col(6);
+		}
+		&__title {
+			font-size: 3.2rem;
+		}
+		&__text{
+			max-width: 480px;
+		}
+		&__img-block {
+			display: block;
+			@include make-col(6);
+		}
+	}
+}

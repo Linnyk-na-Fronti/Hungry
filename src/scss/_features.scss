@@ -1,0 +1,93 @@
+.features {
+   @include media-breakpoint-up(xs){
+		&__content {
+         @extend .my-row;
+		}
+      
+		&__img {
+         @include make-col(4);
+         position: relative;
+         display: none;
+		}
+
+		&__img-mask1 {
+         z-index: 1;
+         height: 230px;
+         width: 272px;
+         position: absolute;
+         top: 40px;
+         left: -115px;
+		}
+
+		&__img-mask2 {
+         z-index: 1;
+         width: 470px;
+         height: 538px;
+         position: absolute;
+         top: 480px;
+         left: -55px;
+		}
+
+
+		&__img-phone {
+         margin: 0 0 0 -150px;
+         position: relative;
+         z-index: 10;
+		}
+
+		&__title {
+         text-align: center;
+         margin: 100px 0 75px;
+		}
+
+		&__items {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+		}
+   }
+   @include media-breakpoint-up(lg){
+      &__img {
+         display: block;
+      }
+      &__information {
+        @include make-col-offset(1);
+        @include make-col(6);
+		}
+      &__title {
+         text-align: left;
+         margin: 200px 0 75px;
+      }
+   }
+}
+
+.features-item {
+   display: flex;
+   column-gap: 30px;
+   align-items: center;
+   margin: 0 0 50px 0;
+		&__img {
+         position: relative;
+		}
+
+		&__img-main {
+         height: 80px;
+         width: 80px;
+		}
+      &__img-second{
+         transform: rotate(15deg);
+         height: 84px;
+         position: absolute;
+         top: -10px;
+         left: -17px;
+      }
+
+		&__title {
+         margin: 0 0 0.8em 0;
+		}
+
+		&__text {
+         max-width: 460px;
+		}
+}
+

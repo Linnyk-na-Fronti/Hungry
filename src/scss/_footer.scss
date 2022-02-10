@@ -1,0 +1,147 @@
+.footer {
+   background-color: #031019;
+   a{
+      text-decoration: none;
+      color: #B3B7BA;
+   }
+
+   @include media-breakpoint-up(xs){
+	&__content {
+      padding: 100px 0;
+      @extend .my-row;
+      text-align: center;
+		}
+
+		&__logo-element {
+         @include make-col(12);
+         margin: 0 0 40px 0;
+		}
+
+		&__logo {
+         font-size: 1.9rem;
+			font-weight: 700;
+			line-height: 1.2em;
+         color:#ffffff;
+         margin: 0 0 35px 0;
+		}
+
+		&__text {
+         color:#B3B7BA;
+		}
+
+		&__support {
+         @include make-col(6);
+         margin: 0 0 35px 0;
+
+		}
+
+		&__element-tittle {
+         color: #ffffff;
+         margin: 0 0 35px 0;
+		}
+
+		&__list {
+		}
+
+		&__list-item {
+      margin: 0 5px 15px 5px;
+
+		}
+
+		&__link {
+		}
+
+		&__usefull {
+         @include make-col(6);
+
+		}
+
+      &__letter{
+         @include make-col(12);
+      }
+      &__letter-tirle{
+         margin: 0 0 25px 0;
+      }
+   }
+    @include media-breakpoint-up(lg){
+      &__content {
+      @extend .my-row;
+      text-align: left;
+		}
+
+       &__logo-element {
+         @include make-col(4);
+		}
+
+		&__logo {
+         font-size: 1.9rem;
+			font-weight: 700;
+			line-height: 1.2em;
+         color:#ffffff;
+         margin: 0 0 35px 0;
+		}
+
+		&__text {
+         color:#B3B7BA;
+		}
+
+		&__support {
+         @include make-col(2);
+
+		}
+
+		&__element-tittle {
+         color: #ffffff;
+         margin: 0 0 35px 0;
+		}
+
+		&__list {
+		}
+
+		&__list-item {
+      margin: 0 0 15px 0;
+
+		}
+
+		&__link {
+		}
+
+		&__usefull {
+         @include make-col(2);
+
+		}
+
+      &__letter{
+         @include make-col(4);
+      }
+      &__letter-tirle{
+         margin: 0 0 25px 0;
+      }
+    }
+}
+
+.footer-form {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+		&__input {
+         height: 41px;
+         border: none;
+         padding: 0 0 0 10px;
+         width: 100%;
+         max-width: 360px;
+         &:focus{
+            border: none;
+            outline: none;
+         }
+		}
+
+		&__btn {
+         height: 41px;
+         background-color: $backgrond-color;
+         color: #ffffff;
+         border: none;
+         outline: none;
+         padding: 10px 35px;
+		}
+}

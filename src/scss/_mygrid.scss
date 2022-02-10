@@ -1,0 +1,75 @@
+// Перед використанням скачуємо BOOTSTRAP:
+//  npm install bootstrap
+
+// загружаємо сітку
+@import "../../node_modules/bootstrap/scss/_functions";
+@import "../../node_modules/bootstrap/scss/_variables";
+@import "../../node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "../../node_modules/bootstrap/scss/mixins/_container";
+@import "../../node_modules/bootstrap/scss/mixins/_grid";
+
+// Встановлюємо брейкпоінти
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+) !default;
+
+// Встановлюємо максимальну ширину контейнера
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+) !default;
+
+// Встановлюємо ширину жолуба
+$grid-gutter-width: 1.5rem !default;
+
+// Сторюємо залежність ширини контейнера від контрольних точок
+@mixin make-max-width-container($max-widths:$container-max-widths,$breakpoints:$grid-breakpoints) {
+  @each $breakpoint, $max-width in $max-widths {
+    @include media-breakpoint-up($breakpoint, $breakpoints){
+      max-width: $max-width;
+    }
+  }
+}
+
+// РЕШТУ ЕЛЕМЕНТІВ МИ ЗАСТОСОВУЖЄМО БЕЗПОСЕРЕДНЬО В ТАБЛИЦІ СТИЛІВ
+
+// Формуємо виклик рядка
+.my-row{
+  @include make-row();
+    & > *{
+      @include make-col-ready();
+    }
+}
+// Виклик рядка:
+// @extend .my-row;
+
+// Сторення колонки:
+// @include make-col(6);
+
+
+// Формування контейнера
+.container{
+  @include make-container();
+  @include make-max-width-container();
+}
+
+
+// Для створення адаптиву викликаємо брейкпоінт:
+//   @include media-breakpoint-up(xs,sm,md,lg,xl,xxl); і розміщуємо туди make-col:
+//      &__class{
+//        @include make-col(6);
+//      }
+//
+
+// Створюємо відступ зліва для непотрібних колонок
+//      @mixin make-col-offset($columns)
+
+
